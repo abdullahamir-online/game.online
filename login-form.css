@@ -1,0 +1,133 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+/* Login Container */
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    height: 120px;
+    background: url('images/logo.updated.png') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 20px;
+}
+
+/* Login Heading */
+.login-heading {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Input Fields */
+.input-field {
+    width: calc(100% - 20px);  /* Adjust width to account for padding */
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Login Button */
+.login-button, .google-button {
+    width: calc(100% - 20px); /* Adjust to match input fields */
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* Login Button Styles */
+.login-button {
+    background-color: #ff4b2b;
+}
+
+.login-button:hover {
+    background-color: #ff416c;
+    transform: scale(1.05);
+}
+
+/* Google Login Button */
+.google-button {
+    background-color: #4285f4;
+}
+
+.google-button:hover {
+    background-color: #357ae8;
+    transform: scale(1.05);
+}
+
+/* Signup Text */
+.signup-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.signup-text a {
+    color: #ff416c;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Alignment Fix */
+.login-form {
+    width: 100%;
+    max-width: 320px; /* Ensures form is consistent */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything */
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .login-heading {
+        font-size: 1.5rem;
+    }
+
+    .input-field, .login-button, .google-button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

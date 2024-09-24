@@ -1,0 +1,69 @@
+/* Maintenance Page Styles */
+.maintenance-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Match the theme */
+    color: white;
+    min-height: 100vh;
+}
+
+.maintenance-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.maintenance-container h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    animation: fadeIn 2s ease-out;
+}
+
+.maintenance-container a {
+    color: #FF4B2B; /* Accent color from the theme */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.maintenance-container a:hover {
+    text-decoration: underline;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .maintenance-container h1 {
+        font-size: 2rem;
+    }
+
+    .maintenance-container h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .maintenance-container {
+        padding: 20px;
+    }
+
+    .maintenance-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .maintenance-container h3 {
+        font-size: 0.9rem;
+    }
+}

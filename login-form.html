@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Game.Online</title>
+    <link rel="icon" href="images/logo.updated.png" type="image/png">
+    <link rel="stylesheet" href="login-form.css">
+    
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+        import './firebaseConfig.js'; 
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo"></div>
+        <h2 class="login-heading">Login to Game.Online</h2>
+        <form class="login-form">
+            <input type="email" placeholder="Your Email" id="login-email" class="input-field" required>
+            <input type="password" placeholder="Password" id="login-password" class="input-field" required>
+            <button type="button" class="login-button" id="login-btn">Login</button>
+            <button type="button" class="google-button" id="google-signin-btn">Login with Google</button>
+            <p class="signup-text">Don't have an account? <a href="sign-up.html">Sign Up</a></p>
+        </form>
+    </div>
+
+    <!-- This script now correctly loads modules and links event listeners to their functions -->
+    <script type="module">
+        import { signUpUser, loginUser, googleSignIn } from './login-logic.js';
+
+        document.getElementById('login-btn').addEventListener('click', () => {
+          const email = document.getElementById('login-email').value;
+          const password = document.getElementById('login-password').value;
+          loginUser(email, password);
+        });
+
+        document.getElementById('google-signin-btn').addEventListener('click', googleSignIn);
+    </script>
+</body>
+</html>

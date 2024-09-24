@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An engaging Rock, Paper, Scissors game designed for all age groups to enjoy.">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="icon" href="images/logo.updated.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDKs for version 10.x -->
+    <script type="module">
+        // Importing Firebase SDKs as modules (Firebase version 10.x)
+    
+
+        // Initialize Firebase in firebaseConfig.js
+        import './firebaseConfig.js';
+    </script>
+    
+    <script type="module" src="script.js"></script>
+
+   
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="main-heading">Rock Paper Scissors</h1>
+            <p class="bounce-header">Let the game begin! 
+                <br> Choose your weapon
+            </p>
+
+            <!-- User Dashboard -->
+            <div id="dashboard" class = "dashboard" style="text-align:left">
+                <h2 id="userNameDisplay">Loading user data...</h2>
+                <p id="highScoreDisplay">Loading your high score...</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="game-container">
+        <!-- Result Status -->
+        <div class="result_status" id="result_status">
+            <h3 id="result_status_cont">You Won!</h3>
+            <span id="close" title="Close" onclick="cut()">✖</span>
+        </div>
+
+        <!-- Score Panels with Bouncy Style -->
+        <div class="score-section">
+            <div class="score-panel bounce" id="user-score-panel">
+                <h3>Your Score</h3>
+                <p id="user-score">00</p>
+            </div>
+            <div class="score-panel bounce" id="comp-score-panel">
+                <h3>Computer Score</h3>
+                <p id="comp-score">00</p>
+            </div>
+        </div>
+
+        <!-- Game Content -->
+        <div class="game-content">
+            <div class="choice-container">
+                <div class="box" id="rock" onclick="clientSetRock()" title="ROCK">
+                    <img src="images/rock.png" alt="ROCK" class="icon_img">
+                </div>
+                <div class="box" id="scissor" onclick="clientSetScissor()" title="SCISSOR">
+                    <img src="images/scissor.png" alt="SCISSOR" class="icon_img">
+                </div>
+                <div class="box" id="paper" onclick="clientSetPaper()" title="PAPER">
+                    <img src="images/paper.png" alt="PAPER" class="icon_img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-container">
+            <div class="control-button" id="autoplay" onclick="switchAutoPlay()" title="Auto Play">
+                <img src="images/autoplay.png" alt="AUTO-PLAY" class="control-icon">
+            </div>
+            <div class="control-button" id="help" title="How to Play">
+                <a href="help.html"><img src="images/help.png" alt="HELP" class="control-icon"></a>
+            </div>
+            <div class="control-button" id="exit" title="Exit">
+                <a href="exit.html"><img src="images/exit.png" alt="EXIT" class="control-icon"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="customAlert" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p id="modalMessage">Your message here</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Game.Online. All rights reserved.</p>
+    </footer>
+
+    <!-- Load Scripts at the end of the body for better performance -->
+    <script type="module" src="firebaseConfig.js"></script>
+
+
+
+
+    <script type="module">
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+      
+        const auth = getAuth();
+      
+        // Function to sign out the user when the window is closed or refreshed
+        window.addEventListener('beforeunload', (event) => {
+          signOut(auth)
+            .then(() => {
+              console.log('User signed out successfully');
+            })
+            .catch((error) => {
+              console.error('Error signing out:', error);
+            });
+        });
+      </script>
+      
+
+
+
+
+
+
+</body>
+
+</html>

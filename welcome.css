@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+
+/* Welcome Screen Styles */
+.welcome-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Ensures the content is centered horizontally */
+}
+
+/* Bounce Header Animation */
+.bounce-header {
+    font-size: 2.5rem; /* Increased font size */
+    letter-spacing: 3px;
+    animation: bounceHeader 2s infinite;
+}
+
+@keyframes bounceHeader {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    opacity: 0.9;
+    
+}
+
+/* Start Button */
+.start-button {
+    background-color: #ff4b2b;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem; /* Slightly increased size */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #ff416c;
+    transform: scale(1.1);
+}
+
+/* Glitch Animation for Heading */
+.main-heading {
+    font-style: italic;
+    opacity: 0.9;
+    animation: glitch 1.5s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px red; }
+    20% { text-shadow: -2px -2px blue; }
+    40% { text-shadow: 2px -2px lime; }
+    60% { text-shadow: -2px 2px yellow; }
+    80% { text-shadow: 2px 2px purple; }
+    100% { text-shadow: -2px -2px cyan; }
+}
+
+/* Logo Styles */
+.logo {
+    width: 150px;
+    height: 150px;
+    padding-top: 20px;
+    background: url('images/logo.updated.png') no-repeat center center;
+    background-size: contain;
+    animation: bounceRotate 700ms ease-in-out infinite;
+    transform-origin: center; /* Ensure rotation happens around the center */
+    /* margin-bottom: 10px; Add some space between the logo and the heading */
+}
+
+@keyframes bounceRotate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg); /* Starting position */
+    }
+    25% {
+        transform: translateY(-30px) rotate(90deg); /* Bounce up and rotate */
+    }
+    50% {
+        transform: translateY(0) rotate(180deg); /* Back to original height, halfway rotation */
+    }
+    75% {
+        transform: translateY(-30px) rotate(270deg); /* Bounce up again and rotate further */
+    }
+    100% {
+        transform: translateY(0) rotate(360deg); /* Complete rotation and back to the starting position */
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .welcome-container {
+        padding: 30px;
+    }
+
+    .bounce-header {
+        font-size: 3rem; /* Adjusted for medium screens */
+    }
+
+    .start-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+ 
+}
+
+@media (max-width: 480px) {
+    .bounce-header {
+        font-size: 2.0rem; /* Adjusted for small screens */
+        margin-top: 5px;
+    }
+
+    .start-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .logo{
+        padding-top: 20px;
+        height: 100px;
+        width: 100px;
+    }
+}
